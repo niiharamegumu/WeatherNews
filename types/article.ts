@@ -9,5 +9,5 @@ export type ArticleType = {
   url: string;
   urlToImage: string;
   publishedAt: string;
-  content: string;
+  content: string | null;
 };
