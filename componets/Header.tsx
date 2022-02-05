@@ -5,7 +5,6 @@ import {
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   useDisclosure,
@@ -14,6 +13,7 @@ import {
 import { VFC } from "react";
 
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { Nav } from "./Nav";
 
 export const Header: VFC = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -22,7 +22,7 @@ export const Header: VFC = () => {
       <Flex
         alignItems="center"
         h="80px"
-        p="0 20px"
+        p={{ base: 4, md: 10 }}
         gap="1em"
         borderBottom="1px"
         borderColor="gray.600"
@@ -32,15 +32,16 @@ export const Header: VFC = () => {
       </Flex>
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent color="gray.900">
+        <DrawerContent bg="gray.600">
           <DrawerCloseButton
-            color="gray.900"
-            _hover={{ bg: "gray.900", color: "white" }}
+            color="white"
+            _hover={{ transform: "scale(1.5)" }}
             _focus={{ outline: "none" }}
           />
           <DrawerHeader>Select News</DrawerHeader>
-          <DrawerBody>body</DrawerBody>
-          <DrawerFooter>footer</DrawerFooter>
+          <DrawerBody>
+            <Nav />
+          </DrawerBody>
         </DrawerContent>
       </Drawer>
     </Box>

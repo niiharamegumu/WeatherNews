@@ -1,19 +1,12 @@
 import type { AppProps } from "next/app";
-import { Box, ChakraProvider } from "@chakra-ui/react";
 
-import theme from "../theme/theme";
-import { Header } from "../componets/Header";
-import { Footer } from "../componets/Footer";
+import { Layout } from "../componets/layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider resetCSS={true} theme={theme}>
-      <Header />
-      <Box as="main" h="100vh">
-        <Component {...pageProps} />
-      </Box>
-      <Footer />
-    </ChakraProvider>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }
 
