@@ -13,7 +13,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ArticlesType | Error>
 ) {
-  const pageSize = 20;
+  const pageSize = 40;
   try {
     const result = await fetch(
       `https://newsapi.org/v2/top-headlines?country=jp&pageSize=${pageSize}&apiKey=${process.env.NEWS_API_KEY}`

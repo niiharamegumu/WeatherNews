@@ -24,7 +24,7 @@ const Home: VFC<Props> = (props) => {
             lg: "repeat(2,1fr)",
             xl: "repeat(4,1fr)",
           }}
-          gap={{ base: 4, md: 9 }}
+          gap={{ base: 6, md: 8 }}
         >
           {articles.map((article) => (
             <Article
