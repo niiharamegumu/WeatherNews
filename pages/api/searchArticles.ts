@@ -13,7 +13,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ArticlesType | Error>
 ) {
-  const pageSize = 50;
+  const pageSize = 52;
   const terms = req.query.terms as string;
   try {
     const result = await fetch(

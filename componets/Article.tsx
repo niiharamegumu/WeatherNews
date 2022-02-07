@@ -6,6 +6,7 @@ import {
   Tag,
   Stack,
   Tooltip,
+  Flex,
 } from "@chakra-ui/react";
 import { VFC } from "react";
 import moment from "moment";
@@ -35,7 +36,7 @@ export const Article: VFC<Props> = (props) => {
           bg="gray.500"
         >
           <Stack>
-            {article.urlToImage && (
+            {article.urlToImage ? (
               <Image
                 src={article.urlToImage}
                 alt={`${article.title} image`}
@@ -43,6 +44,18 @@ export const Article: VFC<Props> = (props) => {
                 h={250}
                 objectFit="cover"
               />
+            ) : (
+              <Flex
+                h={250}
+                w="100%"
+                bg="gray.700"
+                justify="center"
+                align="center"
+                fontSize="xl"
+                color="gray.500"
+              >
+                Not Image...
+              </Flex>
             )}
             <Tag
               justifyContent="center"
