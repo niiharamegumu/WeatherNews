@@ -43,7 +43,7 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch(
-    "https://weather-news-drdf3xbzc-niiharamegumu.vercel.app/api/newsArticles"
+    `${process.env.NEXT_PUBLIC_PROJECT_BASE_URL}/api/newsArticles`
   );
   const json = await response.json();
   const articles = json.articles;
