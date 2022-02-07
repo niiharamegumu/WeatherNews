@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     `${process.env.NEXT_PUBLIC_PROJECT_BASE_URL}/api/searchArticles?q=${title}`
   );
   const json = await response.json();
-  const articles = await json.articles;
+  const articles = json.articles;
 
   return {
     props: { articles, title },
