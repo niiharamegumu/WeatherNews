@@ -28,7 +28,7 @@ export const Header: VFC = () => {
         borderColor="gray.600"
       >
         <HamburgerIcon w={8} h={8} cursor="pointer" onClick={onOpen} />
-        <Text fontSize="2xl">TrendNews</Text>
+        <Text fontSize="2xl">Pick Up News</Text>
       </Flex>
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
@@ -38,8 +38,12 @@ export const Header: VFC = () => {
             _hover={{ transform: "scale(1.5)" }}
             _focus={{ outline: "none" }}
           />
-          <DrawerHeader>Select News</DrawerHeader>
-          <DrawerBody>
+          <DrawerBody
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            textAlign="center"
+          >
             <Nav onClick={onClose} />
           </DrawerBody>
         </DrawerContent>

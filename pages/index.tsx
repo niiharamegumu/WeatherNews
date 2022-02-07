@@ -1,8 +1,9 @@
-import { Box, Grid } from "@chakra-ui/react";
+import { Box, Grid, Heading } from "@chakra-ui/react";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
 import { VFC } from "react";
 import { Article } from "../componets/Article";
+import { PrimaryTitle } from "../componets/PrimaryTitle";
 import { ArticleType } from "../types/article";
 
 type Props = {
@@ -18,6 +19,7 @@ const Home: VFC<Props> = (props) => {
         <title>News</title>
       </Head>
       <Box>
+        <PrimaryTitle>Head News.</PrimaryTitle>
         <Grid
           gridTemplateColumns={{
             base: "1fr",
