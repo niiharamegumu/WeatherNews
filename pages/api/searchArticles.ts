@@ -17,7 +17,7 @@ export default async function handler(
   const terms = req.query.terms as string;
   try {
     const result = await fetch(
-      `https://newsapi.org/v2/everything?q=${terms}&searchIn=title,description&sortBy=popularity&pageSize=${pageSize}&apiKey=${process.env.NEWS_API_KEY}`
+      `https://newsapi.org/v2/everything?q=${terms}&searchIn=title&sortBy=popularity&pageSize=${pageSize}&apiKey=${process.env.NEWS_API_KEY}`
     );
     const json = await result.json();
     const articles = json.articles;
