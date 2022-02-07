@@ -1,6 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 
-const theme = extendTheme({
+export const darkTheme = extendTheme({
   styles: {
     global: {
       body: {
@@ -11,5 +11,14 @@ const theme = extendTheme({
     },
   },
 });
-
-export default theme;
+export const normalTheme = extendTheme({
+  styles: {
+    global: {
+      body: {
+        bg: "gray.100",
+        color: "Black",
+      },
+      a: { color: "gray.100" },
+    },
+  },
+});
