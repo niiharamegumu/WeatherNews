@@ -14,10 +14,10 @@ export default async function handler(
   res: NextApiResponse<ArticlesType | Error>
 ) {
   const pageSize = 52;
-  const terms = req.query.terms as string;
+  const category = req.query.category as string;
   try {
     const result = await fetch(
-      `https://newsapi.org/v2/everything?q=${terms}&searchIn=title&sortBy=popularity&pageSize=${pageSize}&apiKey=${process.env.NEWS_API_KEY}`
+      `https://newsapi.org/v2/top-headlines?country=jp&category=${category}&country=jp&pageSize=${pageSize}&apiKey=${process.env.NEWS_API_KEY}`
     );
     const json = await result.json();
     const articles = json.articles;

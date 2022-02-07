@@ -6,12 +6,14 @@ import { NavLinkType } from "../types/navLink";
 const navLinks: NavLinkType[] = [
   {
     path: "/",
-    title: "ヘッドニュース",
+    title: "Head News",
   },
   {
-    path: "/topics/Shopify",
-    title: "Shopify",
+    path: "/topics/technology",
+    title: "Technology",
   },
+  { path: "/topics/entertainment", title: "Entertainment" },
+  { path: "/topics/sports", title: "Sports" },
 ];
 
 type Props = {

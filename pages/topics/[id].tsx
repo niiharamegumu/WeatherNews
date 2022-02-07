@@ -18,6 +18,7 @@ const Topic: VFC<Props> = (props) => {
   }
 
   const { articles, title } = props;
+  console.log(articles);
   return (
     <>
       <Head>
@@ -54,7 +55,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const title = params!.id;
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_PROJECT_BASE_URL}/api/searchArticles?q=${title}`
+    `${process.env.NEXT_PUBLIC_PROJECT_BASE_URL}/api/articlesByCategory?category=${title}`
   );
   const json = await response.json();
   const articles = json.articles;
