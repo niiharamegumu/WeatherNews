@@ -8,10 +8,11 @@ import {
   Tooltip,
   Flex,
 } from "@chakra-ui/react";
-import { VFC } from "react";
+import { useState, VFC } from "react";
 import moment from "moment";
 
 import { ArticleType } from "../types/article";
+import { NotImage } from "./NotImage";
 
 type Props = {
   article: ArticleType;
@@ -20,6 +21,8 @@ type Props = {
 
 export const Article: VFC<Props> = (props) => {
   const { article, title } = props;
+  const [isError, setIsError] = useState(false);
+
   const articleTime = moment(article.publishedAt || moment.now());
   return (
     <GridItem>
@@ -36,26 +39,16 @@ export const Article: VFC<Props> = (props) => {
           bg="gray.500"
         >
           <Stack>
-            {article.urlToImage ? (
+            {article.urlToImage && !isError ? (
               <Image
                 src={article.urlToImage}
                 alt={`${article.title} image`}
-                w="100%"
-                h={250}
+                h={220}
                 objectFit="cover"
+                onError={() => setIsError(true)}
               />
             ) : (
-              <Flex
-                h={250}
-                w="100%"
-                bg="gray.700"
-                justify="center"
-                align="center"
-                fontSize="xl"
-                color="gray.500"
-              >
-                Not Image...
-              </Flex>
+              <NotImage />
             )}
             <Tag
               justifyContent="center"
