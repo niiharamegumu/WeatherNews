@@ -40,7 +40,7 @@ export const Header: VFC = () => {
           />
           <DrawerHeader>Select News</DrawerHeader>
           <DrawerBody>
-            <Nav />
+            <Nav onClick={onClose} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>

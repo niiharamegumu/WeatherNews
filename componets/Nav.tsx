@@ -1,15 +1,34 @@
-import { Box, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import Link from "next/link";
 import { VFC } from "react";
+import { NavLinkType } from "../types/navLink";
 
-export const Nav: VFC = (props) => {
+const navLinks: NavLinkType[] = [
+  {
+    path: "/",
+    title: "ヘッドニュース",
+  },
+  {
+    path: "/topics/Shopify",
+    title: "Shopify",
+  },
+];
+
+type Props = {
+  onClick?: () => void;
+};
+
+export const Nav: VFC<Props> = (props) => {
+  const { onClick } = props;
   return (
     <Box as="nav">
-      <Wrap>
-        <WrapItem>
-          <Link href="/">ヘッドニュース</Link>
-        </WrapItem>
-      </Wrap>
+      <Flex gap={5} flexWrap="wrap">
+        {navLinks.map((navLink) => (
+          <Box key={navLink.path} minW="100%" fontSize="xl" onClick={onClick}>
+            <Link href={navLink.path}>{navLink.title}</Link>
+          </Box>
+        ))}
+      </Flex>
     </Box>
   );
 };
