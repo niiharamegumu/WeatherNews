@@ -1,6 +1,4 @@
-# Name
-
-Pick Up News
+# Pick Up News
 
 ## Description
 
